@@ -1,0 +1,38 @@
+
+<div class="container" class="col-6-mx-auto">
+
+  <div class="card">
+
+    <h2><%= @restaurant.name %></h2>
+    <p>
+      <%= @restaurant.address %>
+    </p>
+
+    <p>
+      <%= @restaurant.phone_number %>
+    </p>
+
+    <p>
+      <%= @restaurant.category %>
+    <p>
+
+    <h5>Reviews:</h5>
+
+    <% @restaurant.reviews.each do |review|  %>
+        <p>Rating: <%= review.rating %></p>
+        <p><%= review.content %></p>
+    <% end %>
+
+    <p>
+      <%= link_to "Add Review", new_restaurant_review_path(@restaurant) %>
+    </p>
+
+    <p>
+      <%= link_to "Back to list", restaurants_path %>
+    </p>
+
+  </div>
+</div>
+
+
+

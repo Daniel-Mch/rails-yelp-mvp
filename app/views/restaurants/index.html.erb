@@ -1,0 +1,19 @@
+
+
+<div class="container" class="col-6-mx-auto">
+
+  <h1>All Restaurants</h1>
+
+  <ul>
+  <% @restaurants.each do |restaurant|  %>
+    <li class="card">
+      <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2>
+      <h4><%= restaurant.category %></h2>
+    </li>
+  <% end %>
+  </ul>
+  <div class="btn">
+    <%= link_to "Add restaurant", new_restaurant_path %>
+  </div>
+
+</div>
